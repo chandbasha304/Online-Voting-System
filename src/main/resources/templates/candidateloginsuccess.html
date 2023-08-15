@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      background-image: url("https://images.thequint.com/thequint/2019-05/c05818f6-947a-4d56-91f2-be4fb5ff4a9c/parliamant_01__1_.jpg?rect=0%2C0%2C2000%2C1125&auto=format%2Ccompress&fmt=webp&w=1200");
+      background-size: cover;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: Arial, sans-serif; /* Set the same font family as body */
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    span {
+      font-family: Arial, sans-serif; /* Set the same font family as body */
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    nav button {
+      text-decoration: none;
+      color: white;
+      margin: 0 20px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #555;
+      transition: background-color 0.2s;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background-color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome, <strong th:text="${candidatename}"></strong>!</h1>
+  </header>
+  
+  <nav>
+    <form th:action="@{/candidatestatus}" method="post">
+      <input type="hidden" name="email" th:value="${candidatename}" />
+      <button type="submit">Participant Status</button>
+    </form>
+
+   <form action="first" method="get">
+	   
+	    <button onclick="confirmLogout()">Logout</button>
+   </form>
+  </nav>
+
+  <script>
+    function confirmLogout() {
+      confirm("Are you sure you want to logout?");
+     
+    }
+  </script>
+</body>
+</html>

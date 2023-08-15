@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 600px;
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+        }
+
+        .info-item strong {
+            font-weight: bold;
+            display: inline-block;
+            width: 150px;
+        }
+
+        .info-item span {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Voter Information</h1>
+        <div class="info-item">
+            <strong>Name:</strong>
+            <span th:text="${voter.votername}"></span>
+        </div>
+        <div class="info-item">
+            <strong>Voting ID:</strong>
+            <span th:text="${voter.voterid}"></span>
+        </div>
+        <div class="info-item">
+            <strong>Status:</strong>
+            <span th:text="${voter.votingstatus}"></span>
+        </div>
+        <div class="info-item">
+            <strong>Citizenship:</strong>
+            <span th:text="${voter.citizenship}"></span>
+        </div>
+    </div>
+</body>
+</html>

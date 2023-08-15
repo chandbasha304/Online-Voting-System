@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Election</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .candidate-details {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Candidate Election</h1>
+        <div class="candidate-details">
+            <p><strong>Party Symbol:</strong> <span th:text="${candidate.partysymbol}"></span></p>
+            <p><strong>Gender:</strong> <span th:text="${candidate.gender}"></span></p>
+            <p><strong>Email:</strong> <span th:text="${candidate.email}"></span></p>
+            <p><strong>Status:</strong> <span th:text="${candidate.status}"></span></p>
+        </div>
+    </div>
+</body>
+</html>

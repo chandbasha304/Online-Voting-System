@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      background-image: url("https://images.thequint.com/thequint/2019-05/c05818f6-947a-4d56-91f2-be4fb5ff4a9c/parliamant_01__1_.jpg?rect=0%2C0%2C2000%2C1125&auto=format%2Ccompress&fmt=webp&w=1200");
+      background-size: cover;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: Arial, sans-serif; /* Set the same font family as body */
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    span {
+      font-family: Arial, sans-serif; /* Set the same font family as body */
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 0 20px;
+      padding: 8px 15px;
+      border-radius: 5px;
+      background-color: #555;
+      transition: background-color 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome, <strong th:text="${admin}"></strong>!</h1>
+  </header>
+  
+  <nav>
+   
+    <a href="candidateslist">Candidate Approval</a>
+    <a href="voterlist">Voter Approval</a>
+    <a href="finalresult">Election Result</a>
+    <a href="loginprocess" onclick="logoutConfirmation()">Logout</a>
+  </nav>
+
+  <script>
+    function logoutConfirmation() {
+      var result = confirm("Are you sure you want to logout?");
+      if (result) {
+        // Perform logout action here
+        // Example: window.location.href = "logout.php";
+      }
+    }
+  </script>
+</body>
+</html>

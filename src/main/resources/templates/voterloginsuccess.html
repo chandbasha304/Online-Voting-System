@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      background-image: url("https://images.thequint.com/thequint/2019-05/c05818f6-947a-4d56-91f2-be4fb5ff4a9c/parliamant_01__1_.jpg?rect=0%2C0%2C2000%2C1125&auto=format%2Ccompress&fmt=webp&w=1200");
+      background-size: cover;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: Arial, sans-serif;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    span {
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    /* Style for buttons in navigation */
+    nav button {
+      text-decoration: none;
+      color: white;
+      margin: 0 20px;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #555;
+      transition: background-color 0.2s;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background-color: #777;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome, <strong th:text="${votername}"></strong>!</h1>
+  </header>
+  
+  <nav>
+    <form th:action="@{/votercandidatedata}" method="post">
+      <button type="submit">View Candidates</button>
+    </form>
+    <form action="voterstatus" method="post">
+    <button>Check Voting Status</button>
+       <input type="hidden" name="votername" th:value="${votername}" /></form>
+   <form action="votenow" method="post"> <button>Vote Now</button>
+   
+    <input type="hidden" name="votername" th:value="${votername}" /></form>
+   </form>
+    <button onclick="confirmLogout()">Logout</button>
+  </nav>
+
+  <script>
+    function confirmLogout() {
+      var confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        window.location.href = "loginprocess";
+      }
+    }
+  </script>
+</body>
+</html>
